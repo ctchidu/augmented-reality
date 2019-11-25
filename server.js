@@ -13,6 +13,6 @@ app.get('/', (req,res) => {
     res.render('index');
 });
 
-app.listen(8585, () => {
+app.listen((process.env.PORT || 5000), () => {
     console.log("listening on http://localhost:8585");
 });
