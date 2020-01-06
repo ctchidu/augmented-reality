@@ -27,6 +27,7 @@ if(this.el.object3D.visible == true){
   if(!this.toggle){
      this.toggle = true;
      this.vid.play();
+this.vid.muted = false;
     }
   }else{
   this.toggle = false;
@@ -42,8 +43,8 @@ if(this.el.object3D.visible == true){
 <body>
   <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
     <a-assets>
-      <video id="tool" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fvideoplayback.mp4?v=1574415262523" loop="true" muted defaultMuted crossorigin autoplay playsinline webkit-playsinline></video>
-        <video id="museum" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fbrail_museum.mp4?v=1574819058581" loop="true" muted defaultMuted crossorigin autoplay playsinline webkit-playsinline></video>
+      <video id="tool" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fvideoplayback.mp4?v=1574415262523" loop="true" muted crossorigin autoplay playsinline webkit-playsinline></video>
+        <video id="museum" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fbrail_museum.mp4?v=1574819058581" loop="true" muted crossorigin autoplay playsinline webkit-playsinline></video>
       </a-assets>
    
     <a-marker type='pattern' url='./assets/pattern-belgiumrail.patt' vidhandler="video: #tool">
