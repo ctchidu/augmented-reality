@@ -36,14 +36,26 @@ if(this.el.object3D.visible == true){
 });
   </script>
 
+<style>
+  h1 {
+    margin: 0 0 24px 0;
+  }
+  select {
+    width: 150px;
+  }
+  video {
+    margin: 10px 0 0 0;
+  }
+  </style>
+
 </head>
 
 
 <body>
   <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
     <a-assets>
-      <video id="tool" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fvideoplayback.mp4?v=1574415262523" loop="true" muted defaultMuted crossorigin autoplay playsinline webkit-playsinline></video>
-        <video id="museum" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fbrail_museum.mp4?v=1574819058581" loop="true" muted defaultMuted crossorigin autoplay playsinline webkit-playsinline></video>
+      <video id="tool" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fvideoplayback.mp4?v=1574415262523" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+        <video id="museum" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fbrail_museum.mp4?v=1574819058581" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
       </a-assets>
    
     <a-marker type='pattern' url='./assets/pattern-belgiumrail.patt' vidhandler="video: #tool">
@@ -60,6 +72,16 @@ if(this.el.object3D.visible == true){
     <a-entity camera vidhandler></a-entity>
   </a-scene>
 
+
+  <div class="select">
+    <label for="audioSource">Audio source: </label><select id="audioSource"></select>
+  </div>
+
+  <div class="select">
+    <label for="videoSource">Video source: </label><select id="videoSource"></select>
+  </div>
+  
+  <script async src="js/main.js"></script>
 
 </body>
 
