@@ -28,10 +28,17 @@ if(this.el.object3D.visible == true){
   if(!this.toggle){
      this.toggle = true;    
       //this.vid.play();
-      var playIos = document.querySelector('playIos');
-      playIos.addEventListener('click', function () {
-        this.vid.play();
-      });
+      if(AFRAME.utils.device.isMobile()) {
+            document.querySelector('#splash').style.display = 'flex';
+            document.querySelector('#splash').addEventListener('click', function () {
+              this.vid.play();
+              this.style.display = 'none';
+              console.log("i am inside");
+            })
+          } else {
+            this.vid.play();
+            console.log("i am inside else");
+          }
     }
   }else{
   this.toggle = false;
@@ -45,10 +52,13 @@ if(this.el.object3D.visible == true){
 
 
 <body>
+    <div id="splash">
+        <div id="start-button">Start</div>
+      </div>
   <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; selectCamera: true;'>
     <a-assets>
-      <video id="tool" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fvideoplayback.mp4?v=1574415262523" loop="true" crossorigin autoplay playsinline webkit-playsinline preload controls></video>
-        <video id="museum" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fbrail_museum.mp4?v=1574819058581" loop="true" crossorigin autoplay playsinline webkit-playsinline preload controls></video>
+      <video id="tool" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fvideoplayback.mp4?v=1574415262523" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+        <video id="museum" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fbrail_museum.mp4?v=1574819058581" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
       </a-assets>
    
     <a-marker type='pattern' url='./assets/pattern-belgiumrail.patt' vidhandler="video: #tool">
