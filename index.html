@@ -26,15 +26,8 @@ AFRAME.registerComponent('vidhandler', {
     
 if(this.el.object3D.visible == true){
   if(!this.toggle){
-     this.toggle = true;
-     var playIos = document.createElement('button');
-     playIos.innerText = 'Play on ios';
-     playIos.setAttribute('style', 'position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;');
-     var body = document.getElementsByTagName("body")[0];
-     body.appendChild(playIos);
-     document.querySelector("playIos").addEventListener("click", (e)=> {
+     this.toggle = true;    
       this.vid.play();
-})
     }
   }else{
   this.toggle = false;
