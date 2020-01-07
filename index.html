@@ -3,67 +3,68 @@
 
 <head>
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,shrink-to-fit=no,user-scalable=no,minimal-ui"><meta aframe-injected="" name="mobile-web-app-capable" content="yes"><meta aframe-injected="" name="theme-color" content="black">
-  
+    <meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,shrink-to-fit=no,user-scalable=no,minimal-ui">
+    <meta aframe-injected="" name="mobile-web-app-capable" content="yes">
+    <meta aframe-injected="" name="theme-color" content="black">
 
-  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-  
-  <script src="https://raw.githack.com/ctchidu/AR.js/v2.1.0/aframe/build/aframe-ar.js"></script>
-  <script>
-AFRAME.registerComponent('vidhandler', {
-  // define a variable in which we will keep the video element
-  schema: {
-     video: {type: 'selector'},
-  },
-  // ...
-  init: function () {
-    // Set up initial state and variables.
-    this.toggle = false;
-    this.vid = this.data.video;
-    this.vid.pause();
-  },
-  tick:function(){
-    
-if(this.el.object3D.visible == true){
-  if(!this.toggle){
-     this.toggle = true;    
-      
-      document.querySelector("button").addEventListener("click", (e)=> {
-        this.vid.play();
-        })
-    }
-  }else{
-  this.toggle = false;
-    this.vid.pause();
-    }
-  }
-});
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
 
-  </script>
+    <script src="https://raw.githack.com/ctchidu/AR.js/v2.1.0/aframe/build/aframe-ar.js"></script>
+    <script>
+        AFRAME.registerComponent('vidhandler', {
+            // define a variable in which we will keep the video element
+            schema: {
+                video: {
+                    type: 'selector'
+                },
+            },
+            init: function() {
+                // Set up initial state and variables.
+                this.toggle = false;
+                this.vid = this.data.video;
+                this.vid.pause();
+            },
+            tick: function() {
+
+                if (this.el.object3D.visible == true) {
+                    if (!this.toggle) {
+                        this.toggle = true;
+                        this.vid.play();
+                        document.querySelector("button").addEventListener("click", (e) => {
+                            this.vid.play();
+                        })
+                    }
+                } else {
+                    this.toggle = false;
+                    this.vid.pause();
+                }
+            }
+        });
+    </script>
 </head>
 <div style='position: fixed; top: 10px; left: 10px; width:100%; text-align: center; z-index: 1;'>
     <button>
         Play on iOS
     </button>
 </div>
-<body>
-  <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; selectCamera: true;'>
-    <a-assets>
-      <video id="tool" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fvideoplayback.mp4?v=1574415262523" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
-        <video id="museum" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fbrail_museum.mp4?v=1574819058581" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
-      </a-assets>
-   
-    <a-marker type='pattern' url='./assets/pattern-belgiumrail.patt' vidhandler="video: #tool">
-        <a-plane  src="#tool"  width="3" height="1.5"  position="0 0 -1" rotation="-90 0 0 ">  </a-plane>
-    </a-marker>
 
-    <a-marker type='pattern' url='./assets/pattern-Le_Belge_1835.patt' vidhandler="video: #museum">
-      <a-plane  src="#museum"  width="3" height="1.5"  position="0 0 -1" rotation="-90 0 0 ">  </a-plane>
-  </a-marker>
-    <a-entity camera vidhandler></a-entity>
-  </a-scene>
+<body>
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; selectCamera: true;'>
+        <a-assets>
+            <video id="tool" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fvideoplayback.mp4?v=1574415262523" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+            <video id="museum" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fbrail_museum.mp4?v=1574819058581" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+        </a-assets>
+
+        <a-marker type='pattern' url='./assets/pattern-belgiumrail.patt' vidhandler="video: #tool">
+            <a-plane src="#tool" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
+        </a-marker>
+
+        <a-marker type='pattern' url='./assets/pattern-Le_Belge_1835.patt' vidhandler="video: #museum">
+            <a-plane src="#museum" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
+        </a-marker>
+        <a-entity camera vidhandler></a-entity>
+    </a-scene>
 
 </body>
-
 
 </html>
