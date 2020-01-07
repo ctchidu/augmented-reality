@@ -27,7 +27,11 @@ AFRAME.registerComponent('vidhandler', {
 if(this.el.object3D.visible == true){
   if(!this.toggle){
      this.toggle = true;    
-      this.vid.play();
+      //this.vid.play();
+      var playIos = document.querySelector('playIos');
+      playIos.addEventListener('click', function () {
+        this.vid.play();
+      });
     }
   }else{
   this.toggle = false;
