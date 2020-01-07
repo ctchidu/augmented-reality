@@ -27,7 +27,10 @@ AFRAME.registerComponent('vidhandler', {
 if(this.el.object3D.visible == true){
   if(!this.toggle){
      this.toggle = true;    
-      this.vid.play();
+      
+      document.querySelector("button").addEventListener("click", (e)=> {
+        this.vid.play();
+        })
     }
   }else{
   this.toggle = false;
