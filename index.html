@@ -27,8 +27,12 @@ AFRAME.registerComponent('vidhandler', {
 if(this.el.object3D.visible == true){
   if(!this.toggle){
      this.toggle = true;
-     
-     document.querySelector("button").addEventListener("click", (e)=> {
+     var playIos = document.createElement('button');
+     playIos.innerText = 'Play on ios';
+     playIos.setAttribute('style', 'position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;');
+     var body = document.getElementsByTagName("body")[0];
+     body.appendChild(playIos);
+     document.querySelector("playIos").addEventListener("click", (e)=> {
       this.vid.play();
 })
     }
@@ -58,11 +62,6 @@ if(this.el.object3D.visible == true){
       <a-plane  src="#museum"  width="3" height="1.5"  position="0 0 -1" rotation="-90 0 0 ">  </a-plane>
   </a-marker>
     <a-entity camera vidhandler></a-entity>
-    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-      <button>
-          Play
-      </button>
-  </div>
   </a-scene>
 
 </body>
