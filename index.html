@@ -53,6 +53,7 @@
         <a-assets>
             <video id="tool" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fvideoplayback.mp4?v=1574415262523" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
             <video id="museum" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fbrail_museum.mp4?v=1574819058581" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+            <video id="city_pass" src="./assets/city_pass.mp4" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
         </a-assets>
 
         <a-marker type='pattern' url='./assets/pattern-belgiumrail.patt' vidhandler="video: #tool">
@@ -61,6 +62,10 @@
 
         <a-marker type='pattern' url='./assets/pattern-Le_Belge_1835.patt' vidhandler="video: #museum">
             <a-plane src="#museum" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
+        </a-marker>
+
+        <a-marker type='pattern' url='./assets/pattern-citypass.patt' vidhandler="video: #city_pass">
+            <a-plane src="#city_pass" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
         </a-marker>
         <a-entity camera vidhandler></a-entity>
     </a-scene>
