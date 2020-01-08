@@ -53,7 +53,20 @@
         <a-assets>
             <video id="tool" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fvideoplayback.mp4?v=1574415262523" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
             <video id="museum" src="https://cdn.glitch.com/c8c8b7ec-a776-4f2a-94f1-6a3d9e6f26ec%2Fbrail_museum.mp4?v=1574819058581" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+            
             <video id="city_pass" src="./assets/city_pass.mp4" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+            <video id="billet_ticket" src="./assets/billet_ticket.mp4" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+            <video id="s_train" src="./assets/s_train.mp4" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+            <video id="train_map" src="./assets/train_map.mp4" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+
+            <video id="tcs_50" src="./assets/tcs_50.mp4" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+            <video id="tcs_digital_software_solutions" src="./assets/tcs_digital_software_solutions.mp4" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+            <video id="tcs_enterprise_cloud" src="./assets/tcs_enterprise_cloud.mp4" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+            <video id="what_is_business_40" src="./assets/what_is_business_40.mp4" loop="true" crossorigin autoplay playsinline webkit-playsinline></video>
+
+
+
+
         </a-assets>
 
         <a-marker type='pattern' url='./assets/pattern-belgiumrail.patt' vidhandler="video: #tool">
@@ -67,6 +80,46 @@
         <a-marker type='pattern' url='./assets/pattern-citypass.patt' vidhandler="video: #city_pass">
             <a-plane src="#city_pass" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
         </a-marker>
+
+        <a-marker type='pattern' url='./assets/pattern-ticket.patt' vidhandler="video: #billet_ticket">
+            <a-plane src="#billet_ticket" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
+        </a-marker>
+
+        <a-marker type='pattern' url='./assets/pattern-s-train.patt' vidhandler="video: #s_train">
+            <a-plane src="#s_train" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
+        </a-marker>
+
+        <a-marker type='pattern' url='./assets/pattern-train_map.patt' vidhandler="video: #train_map">
+            <a-plane src="#train_map" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
+        </a-marker>
+
+
+
+        <a-marker type='pattern' url='./assets/pattern-tcs_50.patt' vidhandler="video: #tcs_50">
+            <a-plane src="#tcs_50" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
+        </a-marker>
+
+        <a-marker type='pattern' url='./assets/pattern-tcs_digital.patt' vidhandler="video: #tcs_digital_software_solutions">
+            <a-plane src="#tcs_digital_software_solutions" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
+        </a-marker>
+
+        <a-marker type='pattern' url='./assets/pattern-tcs_cloud.patt' vidhandler="video: #tcs_enterprise_cloud">
+            <a-plane src="#tcs_enterprise_cloud" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
+        </a-marker>
+
+        <a-marker type='pattern' url='./assets/pattern-tcs_business_40.patt' vidhandler="video: #what_is_business_40">
+            <a-plane src="#what_is_business_40" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
+        </a-marker>
+
+
+
+
+
+
+
+
+
+
         <a-entity camera vidhandler></a-entity>
     </a-scene>
 
