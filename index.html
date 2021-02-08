@@ -64,10 +64,16 @@
             <video id="tcs_enterprise_cloud" src="./assets/tcs_enterprise_cloud.mp4" loop="true" crossorigin autoplay playsinline webkit-playsinline muted></video>
             <video id="what_is_business_40" src="./assets/what_is_business_40.mp4" loop="true" crossorigin autoplay playsinline webkit-playsinline muted></video>
 
+            <video id="parcellock" src="./assets/parcellock.mp4" loop="true" crossorigin autoplay playsinline webkit-playsinline muted></video>
+
 
 
 
         </a-assets>
+
+        <a-marker type='pattern' url='./assets/pattern-HamburgBox.patt' vidhandler="video: #tool">
+            <a-plane src="#parcellock" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
+        </a-marker>
 
         <a-marker type='pattern' url='./assets/pattern-belgiumrail.patt' vidhandler="video: #tool">
             <a-plane src="#tool" width="3" height="1.5" position="0 0 -1" rotation="-90 0 0 "> </a-plane>
